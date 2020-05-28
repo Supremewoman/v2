@@ -7,7 +7,7 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && unzip /v2ray.zip -d /usr/bin/v2ray \
  && rm -rf /v2ray.zip /usr/bin/v2ray/*.sig /usr/bin/v2ray/doc /usr/bin/v2ray/*.json /usr/bin/v2ray/*.dat /usr/bin/v2ray/sys* \
  && chgrp -R 0 /etc/v2ray \
- && chmod -R g+rwX /etc/v2ray \
+ && chmod -R g+rwX /etc/v2ray
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 ENTRYPOINT ["sh", "/configure.sh"]
